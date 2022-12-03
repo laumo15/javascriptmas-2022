@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css" />
+    </head>
+    <body>
+        <section id="meals"></section>
+        
+        <script>
+            /* Challenge 1: Favorite Foods
+- Topic: Object Destructuring
+1. Edit the faveFoods object so that it contains 
+your favorite foods.
+2. Destructure the faveFoods object into three consts: 
+breakfast, lunch, and supper.
+3. Fetch the meals <section> from the DOM.
+4. Set the innerHTML content of the meals <section> to a paragraph
+that states what your favorite foods are for breakfast, lunch, and supper.
+Use a template literal to construct the string.
+
+E.g.
+For breakfast, I only like croissants 🥐. For lunch, I love pasta 🍝, 
+and for supper I want usually want pizza 🍕.
+*/
+
+            const faveFoods = {
+                breakfast: 'pancakes 🥞',
+                lunch: 'pasta 🍝',
+                supper: 'pizza 🍕'
+            }
+            let paragraph = document.querySelector("#meals");
+            paragraph.innerHTML = `For breakfast, I love to have ${faveFoods.breakfast}.
+                                    For lunch, I like ${faveFoods.lunch}. And for dinner,
+                                    my favorite food is ${faveFoods.supper}.`
+        </script>
+    </body>
+</html>
