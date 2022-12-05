@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let shopping = [
+    {
+        item: "🍭",
+        price: 2.99,
+        type: "sweet",
+    },
+    {
+        item: "🍫",
+        price: 1.99, 
+        type: "sweet",
+    },
+    {
+        item: "🥫",
+        price: 1.99, 
+        type: "savory",
+    },
+    {
+        item: "🍬",
+        price: .89, 
+        type: "sweet",
+    },
+    {
+        item: "🥦",
+        price: 3.99,
+        type: "savory",
+    }, 
+    {
+        item: "🍖",
+        price: 3.99, 
+        type: "savory",
+    }, 
+    ];
+
+    function getSaleItems(data){
+        let candies = shopping.filter(element => {
+            return element.type === "sweet"
+        })
+        candies = candies.map(element => {
+            let item = element.item;
+            let price = element.price;
+            let candy = {item: `${item}`, price: `${price}`}
+                return(candy);
+            }
+        )
+        return(candies);
+    };
+    console.log(getSaleItems(shopping));
+
+    </script>
+</body>
+</html>
