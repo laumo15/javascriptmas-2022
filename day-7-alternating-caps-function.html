@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Alternating Caps 
+ Write a function that takes in a string of letters
+ and returns a sentence in which every other letter is capitalized.
+
+Example input: "I'm so happy it's Monday"
+Example output: "I'M So hApPy iT'S MoNdAy"
+*/
+
+function altCaps(str){
+    let newStr = "";
+    for (let c in str) {
+        if (c % 2 === 0) {
+            newStr = newStr + str[c].toUpperCase();
+        } else {
+            newStr = newStr + str[c].toLowerCase();
+        }
+    }
+    return newStr;
+}
+
+console.log(altCaps("When you visit Portland you have to go to VooDoo Donuts"));
+    </script>
+</body>
+</html>
