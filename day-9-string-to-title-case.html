@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* toTitleCase
+        Write a function that will capitalize every word in a sentence.  
+
+        Example Input: "everything, everywhere, all at once"
+        Example Output: "Everything, Everywhere, All At Once"
+        */
+
+        /* 
+        First, write a function that takes in one word and 
+        capitalizes the first letter of that word.
+
+        Example Input: "scrimba"
+        Example Output: "Scrimba"
+
+        Hint: Trying using slice() and .toUpperCase()
+        */
+
+        function capitalizeWord(word){
+            let first = word.slice(0,1);
+            first = first.toUpperCase();
+            let rest = word.slice(1);
+            let capitalizedWord = `${first}${rest}`
+            return (capitalizedWord);
+        }
+
+        /* 
+        Now write a function that capitalizes every word in a sentence. 
+        How can you reuse the function you just wrote? 
+        */ 
+
+        function toTitleCase(str){
+            let words = str.split(" ");
+            let capitalizedSentence = [];
+            words.forEach(element => {
+                let capitalizedWord = capitalizeWord(element);
+                capitalizedSentence.push(capitalizedWord);
+            });
+            capitalizedSentence = capitalizedSentence.join(" ");
+            return (capitalizedSentence);
+        }
+
+        // Test your functions
+        console.log(capitalizeWord("pumpkin"));
+        console.log(toTitleCase("pumpkin pranced purposefully across the pond"));
+    </script>
+</body>
+</html>
