@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function countVowelConsonant(str) {
+            let array = str.split("");
+            let vowels = ["a", "e", "i", "o", "u"];
+            let arrayNum = array.map(char => {if (vowels.includes(char)) {return(1)} else {return(2)}});
+            count = arrayNum.reduce((a,b)=>a+b);
+            return(count);
+        }
+        console.log(countVowelConsonant("abcde"));
+    </script>
+</body>
+</html>
