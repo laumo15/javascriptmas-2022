@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+        }
+
+        html {
+            font-size: 1.5rem;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        h2 {
+            margin-bottom: 0.5em;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            gap: 1.25em;
+        }
+
+        .table {
+            font-size: 3rem;
+            background-color: rebeccapurple;
+            color: white;
+            border-radius: 10px;
+            padding: 0.25em;
+            width: clamp(50px, 25vw, 100px);
+            height: clamp(50px, 25vw, 100px);
+            display: grid;
+            place-content: center;
+        }
+    </style>
+    <title>Document</title>
+    </head>
+    <body>
+        <h2>Now Serving Tables:</h2>
+        <section id="tables"></section>
+
+        <script>
+            function getReadyTables() {
+                const readyTables = []
+                for (let i = 0; i < 2; i++) {
+                    readyTables.push(Math.round(Math.random()*20) + 1)
+                }
+                return readyTables
+            }
+
+            function displayTables() {
+                let arr = getReadyTables();
+                let tables = document.querySelector("#tables");
+                arr.forEach(element => {
+                    tables.innerHTML = tables.innerHTML + `<div class="table">${element}</div>`
+                });
+            }
+            
+            displayTables();
+
+
+        /* Challenge 3: Ready Tables
+        - Topic: Return a Function
+        Our restaurant has 20 tables and the staff serves 
+        2 tables at a time. They need to know which tables 
+        are ready to serve.  
+        Let's fix this with what we learned about returning a 
+        function inside of another function.
+
+        1. Create a function called displayTables.
+        2. displayTables should map over the array of ready tables 
+        returned from getReadyTables to generate the html we 
+        need to render our display for the staff. One div should 
+        be generated for each table value. Here is an example: 
+        `<div class="table">TABLE VALUE HERE</div>`. 
+        3. Remember to remove the commas after applying map()
+        4. Fetch the tables <section> from the DOM 
+        5. Set the innerHTML content of the tables <section> 
+        to the displayTables function call.
+        */
+    </script>
+</body>
+</html>
